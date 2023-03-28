@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "./helper";
 function Register() {
   const history = useHistory();
   const [status, setStatus] = useState("");
@@ -23,7 +24,7 @@ function Register() {
     e.preventDefault();
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
-      axios.post("http://localhost:9002/register", user).then((res) => {
+      axios.post(`${BASE_URL}/register`, user).then((res) => {
         var mess = res.data.message;
         setStatus(mess);
         history.push("/");

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { TodoItem } from "./TodoItem";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { BASE_URL } from "./helper";
 export const Todos = (props) => {
   const auth = Cookies.get("token");
   const Nauth = JSON.parse(auth);
   const [todos, setTodos] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:9002/todos").then((res) => {
+    axios.get(`${BASE_URL}/todos`).then((res) => {
       const fetchTodo = Object.values(res.data).filter(
         (todo) => String(todo.id) === String(Nauth._id)
       );

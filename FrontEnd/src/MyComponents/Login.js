@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "./helper";
 // import { useHistory } from "react-router-dom"; 
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -19,19 +20,9 @@ const Login = ({setLoginUser}) => {
       [name]: value,
     });
   };
-  // const auth = Cookies.get("token");
-  // // console.log(auth);
-  // if (auth) {
-  //   axios.post("http://localhost:9002/login", JSON.parse(auth)).then((res) => {
-  //     if (res.data.user) {
-  //       setLoginUser(res.data.user);
-  //       // history.pushState("/");
-  //     }
-  //   });
-  // } 
   const login = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:9002/login", user).then((res) => {
+    axios.post(`${BASE_URL}/login`, user).then((res) => {
       if (res.data.message === "statusok") {
         Cookies.set("token", JSON.stringify(res.data.user), { expires: 7 });
         setStatus("Login SuccessFull");

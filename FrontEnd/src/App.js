@@ -10,6 +10,7 @@ import React, { useState , useEffect} from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BASE_URL } from "./MyComponents/helper";
 function App() {
   const [user, setLoginUser] = useState({});
 
@@ -22,7 +23,7 @@ function App() {
     if(Object.keys(user).length === 0){
       
       if (auth) {
-        axios.post("http://localhost:9002/login", JSON.parse(auth)).then((res) => {
+        axios.post(`${BASE_URL}/login`, JSON.parse(auth)).then((res) => {
           if (res.data.user) {
             setLoginUser(res.data.user);
             // history.pushState("/");

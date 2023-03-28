@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { BASE_URL } from "./helper";
 export const AddTodo = ({ addTodo }) => {
   const auth = Cookies.get("token");
   const Cemail = JSON.parse(auth);
@@ -18,7 +19,7 @@ export const AddTodo = ({ addTodo }) => {
   };
   const submit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:9002/addtodo", todo).then((res) => {
+    axios.post(`${BASE_URL}/addtodo`, todo).then((res) => {
       // console.log(todo);
       // console.log(res.data.message);
     });

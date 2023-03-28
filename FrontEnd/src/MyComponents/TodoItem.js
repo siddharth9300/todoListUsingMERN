@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "../App.css";
+import { BASE_URL } from "./helper";
 export const TodoItem = ({ todo }) => {
   const onDelete = (todo) => {
     const id = todo._id;
@@ -17,7 +18,7 @@ export const TodoItem = ({ todo }) => {
     })();
     delay(function () {
       axios
-        .get(`http://localhost:9002/deleteTodo/${id}`)
+        .get(`${BASE_URL}/deleteTodo/${id}`)
         .then((res) => {
           console.log(res.data);
           console.log("data received");
