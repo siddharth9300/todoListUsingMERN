@@ -21,13 +21,12 @@ export const About = () => {
                 src="./notes.png"
               />
               <p className="mb-8 w-3/6 max-md:w-5/6 leading-relaxed dark:text-gray-200">
-                This is a todo list manager made by react and tailwind css
-                source code can be find by clicking below button.
+              Our MERN stack Todo website helps you manage your daily tasks easily. Built with MongoDB, Express, React, and Node.js, our platform is efficient and scalable. Keep track of your to-dos and stay productive with us.
               </p>
             </div>
             <div className="flex justify-center">
               <a
-                href="https://github.com/siddharth9300/react-todo-list"
+                href="https://github.com/siddharth9300/todoListUsingMERN"
                 rel="noreferrer"
                 target="_blank"
                 className=" inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"
