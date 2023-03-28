@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { BASE_URL } from "./helper";
+import { BASE_URL } from "./Helper";
 function Register() {
   const history = useHistory();
   const [status, setStatus] = useState("");

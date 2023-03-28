@@ -10,7 +10,7 @@ import React, { useState} from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { BASE_URL } from "./MyComponents/helper";
+import { BASE_URL } from "./MyComponents/Helper";
 function App() {
   const [user, setLoginUser] = useState({});
 
