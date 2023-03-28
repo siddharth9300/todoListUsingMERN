@@ -3,7 +3,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParsers from "cookie-parser"; 
 import dotenv from 'dotenv';
+import { MongoClient, ServerApiVersion } from "mongodb"
+
+
 const app = express();
+// const { MongoClient, ServerApiVersion } = require('mongodb');
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
@@ -11,17 +15,23 @@ app.use(cookieParsers());
 
 dotenv.config();
 
-
 const DB = process.env.DATABASE;
 const PORT = process.env.PORT || 9002
+
+const credentials = "X509-cert-415975418367858762.pem"
 
 
 mongoose
   // .connect(`${DATABASE}`, {
     .connect(DB, {
     // .connect("mongodb+srv://sidd9300:Sidd0311@todolist.prd4y5h.mongodb.net/?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+
+    sslKey: credentials,
+    sslCert: credentials,
+    serverApi: ServerApiVersion.v1
+
   })
   .then(() => console.log("Connected Successfully"))
   .catch((err) => {
