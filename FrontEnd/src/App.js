@@ -6,7 +6,7 @@ import { AddTodo } from "./MyComponents/AddTodo";
 import { About } from "./MyComponents/About";
 import Login from "./MyComponents/Login";
 import Register from "./MyComponents/Register";
-import React, { useState , useEffect} from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
