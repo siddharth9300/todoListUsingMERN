@@ -21,21 +21,21 @@ A Todo Management Web App made with MERN Stack with Authantication
 
 1. Clone the repository to your local machine using `git clone`.
 
-git clone https://github.com/siddharth9300/todoListUsingMERN.git
+        git clone https://github.com/siddharth9300/todoListUsingMERN.git
 
 
 2. Navigate to the project directory.
 
-cd todoListUsingMERN
+        cd todoListUsingMERN
 
 
 
 3. Install server dependencies using `npm` or `yarn`.
 
-```bash
-cd backend
-npm install
-```
+
+        cd backend
+        npm install
+
 
 4. Install client dependencies using `npm` or `yarn`.
 
