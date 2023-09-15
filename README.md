@@ -39,10 +39,10 @@ A Todo Management Web App made with MERN Stack with Authantication
 
 4. Install client dependencies using `npm` or `yarn`.
 
-```bash
-cd frontend
-npm install
-```
+
+        cd frontend
+        npm install
+
 
 5. Start client.
         
